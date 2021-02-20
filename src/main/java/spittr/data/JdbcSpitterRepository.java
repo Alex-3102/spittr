@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author arc3102
  * @date 2021/2/15 15:07
  */
-@Repository
+//@Repository
 public class JdbcSpitterRepository implements SpitterRepository{
 
     private JdbcOperations jdbcOperations;

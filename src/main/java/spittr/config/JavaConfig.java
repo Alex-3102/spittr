@@ -1,28 +1,41 @@
 package spittr.config;
 
+import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import spittr.Spittle;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @author arc3102
  * @date 2021/1/26 22:24
  */
 @Configuration
+@EnableTransactionManagement
 @ComponentScan
 public class JavaConfig {
 //  注册JDBC模板JdbcTemplate
-    @Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
-    }
+
+//    @Inject
+//    private SessionFactory sessionFactory;
+
+//    @Bean
+//    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory){
+//        return new HibernateTransactionManager(sessionFactory);
+//    }
+
 
 //    @Bean
 //    public SpittleRepository spittleRepository(){
@@ -73,11 +86,4 @@ public class JavaConfig {
 //        return (DataSource) jndiObjectFactoryBean.getObject();
 //    }
 
-    private List<Spittle> createSpittleList(int count) {
-        List<Spittle> spittles = new ArrayList<Spittle>();
-        for (int i=0; i < count; i++) {
-            spittles.add(new Spittle("Spittle " + i, new Date()));
-        }
-        return spittles;
-    }
 }

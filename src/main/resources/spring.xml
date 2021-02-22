@@ -54,10 +54,10 @@
 <!--    <bean id="transactionManager"-->
 <!--          class="org.springframework.orm.hibernate4.HibernateTransactionManager"-->
 <!--          c:sessionFactory-ref="localSessionFactoryBean" />-->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <!-- 注入数据库连接池 -->
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
+<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        &lt;!&ndash; 注入数据库连接池 &ndash;&gt;-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
 <!--    <bean id="localSessionFactoryBean" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
 <!--        <property name="dataSource" ref="dataSource"/>-->
 <!--        <property name="packagesToScan" value="spittr" />-->
@@ -69,6 +69,6 @@
 <!--        </property>-->
 <!--    </bean>-->
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+<!--    <tx:annotation-driven transaction-manager"transactionManager"/>-->
+<!--    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>-->
 </beans>

@@ -42,7 +42,6 @@ public class JdbcSpitterRepository implements SpitterRepository{
 
     @Override
     public Spitter findByUsername(String username) {
-        System.out.println("JdbcSpitterRepository.findByUsername我被调用了");
         return jdbcOperations.queryForObject(
                 SELECT_SPITTER, new SpitterRowMapper(), username
         );

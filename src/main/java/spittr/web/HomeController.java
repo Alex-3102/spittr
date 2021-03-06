@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Arrays;
 
 /**
  * @author arc3102
@@ -33,11 +32,12 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home() throws Exception {
-        for(String p : Arrays.asList(contextBean.getBeanDefinitionNames())){
-            System.out.println(">>>>>>" + p);
-        }
-        System.out.println("+++++++++++++++++++++++++++++++++++\n合计 ");
-        System.out.println(Arrays.asList(contextBean.getBeanDefinitionNames()).size());
+//        contextBean.contextInitialized(servletContextEvent);
+//        for(String p : Arrays.asList(contextBean.getBeanDefinitionNames())){
+//            System.out.println(">>>>>>" + p);
+//        }
+//        System.out.println("+++++++++++++++++++++++++++++++++++\n合计 ");
+//        System.out.println(Arrays.asList(contextBean.getBeanDefinitionNames()).size());
         System.out.println(dataSource);
         Connection con = dataSource.getConnection();
         System.out.println(con);

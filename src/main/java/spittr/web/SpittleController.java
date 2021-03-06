@@ -19,8 +19,8 @@ import java.util.List;
  * @author arc3102
  * @date 2021/1/26 21:40
  */
-//@Controller
-//@RequestMapping("/spittles")
+@Controller
+@RequestMapping("/spittles")
 public class SpittleController {
 
     private static final String MAX_LONG_AS_STRING = "9223372036854775807";
@@ -37,7 +37,6 @@ public class SpittleController {
     public String spittles(@RequestParam(value="max", defaultValue=MAX_LONG_AS_STRING) long max, @RequestParam(value="count", defaultValue="20") int count, Model model){
         model.addAttribute(spittleRepository.findSpittles(max, count));
 //        model.addAttribute(createSpittleList(20));
-        model.addAttribute(new Spittle());
         return "spittles";
     }
 
@@ -48,15 +47,15 @@ public class SpittleController {
             Model model) {
         Spittle spittle = spittleRepository.findOne(spittleId);
         if (spittle == null) {
-            throw new SpittleNotFoundException(spittleId);
+            throw new SpittleNotFoundException();
         }
         model.addAttribute(spittle);
         return "spittle";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String saveSpittle(Spittle spittle, Model model) {
-        spittleRepository.saveSpittle(spittle);
-        return "redirect:/spittles";
-    }
+//    @RequestMapping(method = RequestMethod.POST)
+//    public String saveSpittle(SpittleForm form, Model model) {
+//        spittleRepository.save(new Spittle(null, form.getMessage(), new Date(), form.getLongitude(), form.getLatitude()));
+//        return "redirect:/spittles";
+//    }
 }

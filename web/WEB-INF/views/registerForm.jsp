@@ -10,7 +10,7 @@
   <body>
     <h1>Register</h1>
 
-    <%--@elvariable id="spitter" type="spittr.Spitter"--%>
+    <%--@elvariable id="spitter" type="spittr.spittr.Spitter"--%>
     <sf:form method="POST" commandName="spitter" enctype="multipart/form-data">
       <sf:errors path="*" element="div" cssClass="errors" />
       <sf:label path="firstName"

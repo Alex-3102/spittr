@@ -13,7 +13,7 @@ import javax.persistence.PersistenceUnit;
  * @author arc3102
  * @date 2021/2/20 23:13
  */
-//@Repository
+@Repository
 @Transactional
 public class JpaSpitterRepository implements SpitterRepository{
 

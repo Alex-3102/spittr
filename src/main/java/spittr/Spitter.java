@@ -7,10 +7,9 @@ import org.hibernate.validator.constraints.Email;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 
 @Entity
-public class Spitter implements Serializable {
+public class Spitter {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

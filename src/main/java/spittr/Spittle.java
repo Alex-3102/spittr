@@ -3,50 +3,37 @@ package spittr;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
 public class Spittle {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
-  @NotNull
-  @Column(name="message")
   private String message;
-
-  @Column(name="time")
   private Date time;
-
-  @Column(name="latitude")
   private Double latitude;
-
-  @Column(name="longitude")
   private Double longitude;
 
   public Spittle(String message, Date time) {
     this(null, message, time, null, null);
-    this.time = new Date();
   }
   
-  public Spittle(Long id, String message, Date time, Double latitude, Double longitude) {
+  public Spittle(Long id, String message, Date time, Double longitude, Double latitude) {
     this.id = id;
     this.message = message;
     this.time = time;
-    this.latitude = latitude;
     this.longitude = longitude;
+    this.latitude = latitude;
   }
 
   public Spittle() {
-    this.time = new Date();
+
   }
 
   @Id
-  @GeneratedValue(strategy=GenerationType.IDENTITY)
-  public Long getId() {
+  public long getId() {
     return id;
   }
 

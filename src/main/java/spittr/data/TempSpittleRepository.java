@@ -11,7 +11,7 @@ import java.util.List;
  * @author arc3102
  * @date 2021/1/28 18:43
  */
-@Component
+//@Component
 public class TempSpittleRepository implements SpittleRepository {
     @Override
     public List<Spittle> findSpittles(long max, int count) {
@@ -22,6 +22,11 @@ public class TempSpittleRepository implements SpittleRepository {
     @Override
     public Spittle findOne(long spittleId) {
         return new Spittle(spittleId, "mockMessage", new Date(), 0.0,0.0);
+    }
+
+    @Override
+    public Spittle saveSpittle(Spittle spittle) {
+        return null;
     }
 
     private List<Spittle> createSpittleList(long max, int count) {

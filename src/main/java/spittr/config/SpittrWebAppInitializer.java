@@ -29,20 +29,20 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
     @Override
     protected WebApplicationContext createRootApplicationContext() {
         XmlWebApplicationContext context = new XmlWebApplicationContext();
+//        context.setConfigLocations(new String[]{"classpath:spring.xml", "classpath:spring-cache.xml"});
         context.setConfigLocations(new String[]{"classpath:spring.xml"});
-        System.out.println("123333333333333333333332asdaasewdwdswwwwwwwwwwwwwwwwwwwwwww");
+        System.out.println("createRootApplicationContext++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         return context;
     }
 
     @Override
     protected String[] getServletMappings() {
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        return new String[] { "/" };
+        return new String[] { "/" , "*.service"};
     }
 
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++123333333333333333333333");
+        System.out.println("customizeRegistration++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         registration.setMultipartConfig(new MultipartConfigElement("", 2097152, 4194304, 0));
     }
 

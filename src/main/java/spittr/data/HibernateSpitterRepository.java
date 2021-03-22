@@ -15,7 +15,7 @@ import java.io.Serializable;
  * @author arc3102
  * @date 2021/2/19 23:34
  */
-//@Repository
+@Repository
 public class HibernateSpitterRepository implements SpitterRepository {
 
     private SessionFactory sessionFactory;
@@ -50,6 +50,7 @@ public class HibernateSpitterRepository implements SpitterRepository {
     @Override
     @Transactional
     public Spitter findByUsername(String username) {
+        System.out.println("查询数据库");
         return (Spitter) currentSession()
                 .createCriteria(Spitter.class)
                 .add(Restrictions.eq("username", username))

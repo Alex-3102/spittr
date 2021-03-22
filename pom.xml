@@ -172,6 +172,37 @@
             <artifactId>spring-security-web</artifactId>
             <version>3.2.0.RELEASE</version>
         </dependency>
+<!--        spring data redis 支持-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.3.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.5.2</version>
+        </dependency>
+<!--        使用Jackson2将对象序列化成JSON-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.4.1.3</version>
+        </dependency>
+
+<!--        Ehcache缓存支持-->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.7.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+
     </dependencies>
 
 </project>

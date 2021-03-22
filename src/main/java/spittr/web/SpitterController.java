@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
@@ -60,7 +61,9 @@ public class SpitterController {
     public String showSpitterProfile(@PathVariable String username, Model model){
 //        if (!model.containsAttribute("spitter")) {
 //            System.out.println("model里没有spitter对象，重新查找");
-            model.addAttribute(spitterRepository.findByUsername(username));
+        System.out.println(model);
+        model.addAttribute(spitterRepository.findByUsername(username));
+        System.out.println(model);
         System.out.println(spitterRepository.findByUsername(username));
 //        } else {
 //            System.out.println("model里存在spittr对象，不需要重新查找");
